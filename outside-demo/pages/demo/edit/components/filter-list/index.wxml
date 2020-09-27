@@ -1,0 +1,18 @@
+<view wx:if="{{show}}">
+    <view class="operate-panel-bg {{ showOperatePanel==true ?  'show-panel-anim':'hide-panel-anim'}}" style="background-color:{{settings.editor.operatePanel.backgroundColor}}">
+        <view class="operate-list-main">
+            <scroll-view scroll-x style="white-space: nowrap; width:100%" scroll-with-animation="{{true}}">
+                <view class="filter-main">
+                    <block wx:for="{{filterList}}" wx:key="key">
+                        <view id="{{item.key}}" class='item {{item.selected?"item-selected":""}}' bindtap="onTapFilterBtn" data-key="{{item.key}}">
+                            <image style='{{item.selected ? "border: 2rpx solid " + settings.editor.operatePanel.filter.highlightColor+";" : ""}}' class="icon" lazy-load="{{true}}" src="https://imgcache.qq.com/qcloud/vod/dist/mp-video-edit/filter/{{item.key}}.png"></image>
+                            <view class='desc' style='{{item.selected ? "color: " + settings.editor.operatePanel.filter.highlightColor + ";" : "color: " + settings.editor.operatePanel.textColor + ";"}}'>
+                                {{item.name}}
+                            </view>
+                        </view>
+                    </block>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+</view>

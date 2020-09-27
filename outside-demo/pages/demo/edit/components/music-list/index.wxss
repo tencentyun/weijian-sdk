@@ -1,0 +1,434 @@
+/* pages/edit/index.wxss */
+
+  
+  .operate-panel-bg {
+    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    font-size: 32rpx;
+    z-index: 999;
+  }
+  
+  .show-panel-anim {
+    animation: showpanel 0.3s 1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+  
+  .hide-panel-anim {
+    animation: hidepanel 0.3s 1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+  
+  .operate-list-main {
+    width: 100%;
+    padding: 0 0 0 0;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+    position: relative;
+  }
+  
+  .filter-main{
+    padding-bottom: 30rpx;
+  }
+  
+  .operate-list-main .item {
+    display: inline-block;
+    height: 100%;
+    padding: 20rpx 20rpx;
+      
+  }
+  .operate-list-main .item .icon {
+  
+  }
+  .operate-list-main .item-selected .desc {
+    color: #ff584c;
+  }
+  
+  .operate-list-main .item-selected .desc .marquee {
+    display: inline-block;
+    animation: marquee 8s linear infinite;
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(-100%, 0);
+    }
+  
+    50.001% {
+      transform: translate(100%, 0);
+    }
+  
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  
+  .operate-list-main .item-selected .icon {
+    border: 2rpx solid #ff584c;
+  }
+  
+  .operate-list-main .icon {
+    width: 100rpx;
+    height: 100rpx;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  
+  .operate-list-main .music-more {
+    width: 100rpx;
+    height: 100rpx;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: inline-block;
+  }
+  
+  .operate-list-main .music-more .music-more-icon {
+    width: 60rpx;
+    height: 60rpx;
+    margin: 20rpx 20rpx;
+    text-align: center;
+  }
+  
+  .operate-list-main .desc {
+    text-align: center;
+    color: #fff;
+    font-size: 24rpx;
+    width: 100rpx;
+    overflow: hidden;
+  }
+  
+  .operate-list-main .slider-container {
+    width: 100%;
+    height: 200rpx;
+    padding-top:30rpx;
+  }
+  
+  .operate-list-main .slider-container .slider-item .slider-desc {
+    display: inline-block;
+    width: 15%;
+    text-align: center;
+  }
+  
+  .operate-list-main .slider-container .slider-item .slider-oper-area {
+    display: inline-block;
+    width: 85%;
+  }
+  
+
+.music-tab {
+    width: 100%;
+    /* margin-top: 80px; */
+    padding-left: 10px;
+    padding-right: 10px;
+    /* border-bottom: 2rpx solid rgba(255, 255, 255, .1); */
+  }
+  
+  .music-main-container {
+    width: 100%;
+    height: calc(100% - env(safe-area-inset-bottom));
+    position: fixed;
+    z-index: 1111;
+    top: 0;
+    left: 0;
+    background-color: #1c1c1e;
+    overflow: hidden;
+  }
+
+  .music-main-container.enter {
+    animation: enter 0.2s ease-in both;
+  
+    /* animation-fill-mode: forwards; */
+  } 
+
+  .music-main-container.exit {
+    animation: exit 0.2s ease-in both;
+  }
+
+  @keyframes enter {
+    from {
+      transform: translateY(100%); /*设置为正数则底部弹出来，负数则相反*/
+    }
+  
+    to {
+      transform: translateY(0%);
+    }
+  }
+  
+  @-webkit-keyframes enter {
+    from {
+      transform: translateY(100%); /*设置为正数则底部弹出来，负数则相反*/
+    }
+  
+    to {
+      transform: translateY(0%);
+    }
+  } 
+  
+  @keyframes exit {
+    from {
+      transform: translateY(0%); /*设置为正数则底部弹出来，负数则相反*/
+    }
+  
+    to {
+      transform: translateY(100%);
+    }
+  }
+  
+  @-webkit-keyframes exit {
+    from {
+      transform: translateY(0%); /*设置为正数则底部弹出来，负数则相反*/
+    }
+  
+    to {
+      transform: translateY(100%);
+    }
+  } 
+  
+  .music-tab .tab-item {
+    color:rgba(255, 255, 255, 0.5);
+  
+    font-size: 32rpx;
+    display: inline-block;
+    padding: 24rpx;
+    text-align: center;
+    /* width: 15%; */
+  }
+  
+  .music-tab .tab-item:last-child {
+    margin-right: 30px;
+  }
+  
+  .music-tab .tab-list .active {
+    /* border-bottom: 4rpx solid #ff584c; */
+    color: #ff584c;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  .music-tab .tab-list .active::after {
+    content: "";
+    width: 30rpx;
+    height: 4rpx;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    margin-left: -15rpx;
+    background: #ff584c;
+  }
+  
+  .music-list-wrap {
+    height: 100%;
+    color: rgba(140, 140, 140, 1);
+    padding: 0 30rpx;
+  }
+  
+  .music-list-wrap .tips-error {
+    margin-top: 160px;
+    text-align: center;
+  }
+  
+  .music-list-wrap .item {
+    margin-top: 40rpx;
+    height: 100rpx;
+    vertical-align: center;
+    position: relative;
+    color: #fff;
+  }
+  
+  .music-list-wrap .item-selected {
+    color: #ff584c;
+  }
+  
+  .music-list-wrap .item .desc {
+    padding-left: 120rpx;
+    line-height: 100rpx;
+  }
+  
+  .music-list-wrap .item .icon-wrap {
+    height: 100rpx;
+    width: 100rpx;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  .music-list-wrap .icon-select-wrap {
+    height: 100rpx;
+    width: 100rpx;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .icon-select-wrap .icon-selected {
+    height: 60rpx;
+    width: 120rpx;
+    position: absolute;
+    right: 30rpx;
+    top: 20rpx;
+    /* background: #ff584c; */
+    text-align: center;
+    line-height: 60rpx;
+    color: #fff;
+  }
+  
+  .music-list-wrap .item .icon-unselected {
+    height: 60rpx;
+    width: 60rpx;
+    position: absolute;
+    right: 20rpx;
+    top: 20rpx;
+    border-radius: 50%;
+    border: 1px solid #fff;
+  }
+  
+  .music-list-wrap .item .icon-cover {
+    height: 100rpx;
+    width: 100rpx;
+    border-radius: 50%;
+  }
+  
+  .music-list-wrap .item .icon-play {
+    height: 50rpx;
+    width: 50rpx;
+    position: absolute;
+    top: 25rpx;
+    left: 25rpx;
+  }
+  
+  .music-fixed-footer {
+    position: fixed;
+    bottom: 60rpx;
+    width: 100%;
+  }
+  
+  .btn-add-local-music {
+    color: #ff584c;
+    width: 90%;
+    height: 96rpx;
+    line-height: 96rpx;
+    text-align: center;
+    border: 2rpx solid #ff584c;
+    margin: 0 auto;
+    border-radius: 200rpx 200rpx 200rpx 200rpx;
+  }
+  
+  .music-oper-tab {
+    width: 100%;
+    height: 100rpx;
+  }
+  
+  .music-oper-tab .tab-item {
+    width: 50%;
+    height: 100rpx;
+    display: inline-block;
+    text-align: center;
+    line-height: 100rpx;
+    font-size: 32rpx;
+    font-weight: bold;
+  }
+  
+  .music-oper-tab .item-selected {
+    color: #ff584c;
+  }
+  
+  .item-selected .icon-cover {
+    animation: spin 4s linear infinite;
+  }
+  
+  /* .item .icon-wrap .icon-cover {
+    border-color: pink !important ;
+  } */
+  
+  @keyframes spin {
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* .music-main-container {
+    position: ;
+  } */
+  
+  .music-main-container.enter {
+    animation: enter 0.2s ease-in both;
+  
+    /* animation-fill-mode: forwards; */
+  } 
+  
+  .music-main-container.exit {
+    animation: exit 0.2s ease-in both;
+  }
+  
+   @keyframes enter {
+    from {
+      transform: translateY(100%); /*设置为正数则底部弹出来，负数则相反*/
+    }
+  
+    to {
+      transform: translateY(0%);
+    }
+  }
+  
+  @-webkit-keyframes enter {
+    from {
+      transform: translateY(100%); /*设置为正数则底部弹出来，负数则相反*/
+    }
+  
+    to {
+      transform: translateY(0%);
+    }
+  } 
+  
+  @keyframes exit {
+    from {
+      transform: translateY(0%); /*设置为正数则底部弹出来，负数则相反*/
+    }
+  
+    to {
+      transform: translateY(100%);
+    }
+  }
+  
+  @-webkit-keyframes exit {
+    from {
+      transform: translateY(0%); /*设置为正数则底部弹出来，负数则相反*/
+    }
+  
+    to {
+      transform: translateY(100%);
+    }
+  } 
+  
+  .scroll-wrap-list {
+    padding-bottom: calc(120rpx + env(safe-area-inset-bottom));
+  }
+  
+  .music-top-wrap {
+    /* margin-bottom: env(safe-area-inset-bottom); */
+    background-color: red;
+    z-index: 9999;
+    /* height: 3000px;
+     */
+    background-color: #1c1c1e;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0; 
+  }
+  
+  /* .scroll-change-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  } */

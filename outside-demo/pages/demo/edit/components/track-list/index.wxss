@@ -1,0 +1,57 @@
+.edit-main-panel {
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    bottom: constant(safe-area-inset-bottom);
+    bottom: env(safe-area-inset-bottom);
+    width: 100%;
+    color: #fff;
+    font-size: 24rpx;
+    z-index: 999;
+  
+    
+    /* background: blue; */
+  }
+
+  .edit-main-panel .menu-item {
+    text-align: center;
+    padding: 10rpx 30rpx;
+  }
+
+  .hover-menu-item {
+    transform: scale(1.2);
+    animation: 0.2s transform-scale;
+  }
+
+  .edit-main-panel .menu-item .menu-icon {
+    width: 80rpx;
+    height: 80rpx;
+    text-align: center;
+    margin: 0 auto;
+    /* background: yellowgreen; */
+  }
+
+  .edit-main-panel .menu-item .menu-icon image {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .edit-main-panel .next-btn {
+    right: 20rpx;
+    top: 30rpx;
+    background: red;
+  }
+  
+  .next-btn {
+    position: absolute;
+    right: 30rpx;
+    bottom: 0;
+    width: 150rpx;
+    height: 60rpx;
+    text-align: center;
+    border-radius: 100rpx;
+    background-color: #ff584c;
+    color: #fff;
+    line-height: 60rpx;
+    font-size: 32rpx;
+}

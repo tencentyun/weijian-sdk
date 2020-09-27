@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "wj-camera": "plugin://myPlugin/wj-camera"
+  },
+  "navigationStyle": "custom"
+}

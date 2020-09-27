@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+      "wj-player": "plugin://myPlugin/wj-player",
+      "track-list": "./components/track-list/index",
+      "music-list": "./components/music-list/index",
+      "filter-list": "./components/filter-list/index",
+      "effect-list": "./components/effect-list/index",
+      "wj-texteditor": "plugin://myPlugin/wj-textEditor"
+    }
+  }

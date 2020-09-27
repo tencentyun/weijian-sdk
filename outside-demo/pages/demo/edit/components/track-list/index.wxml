@@ -1,0 +1,31 @@
+<view wx:if="{{show}}" class="edit-main-panel" style="bottom: {{ bottom }}rpx">
+  <view hover-class="hover-menu-item" class="menu-item" catchtap="onTapEditMenu" data-type="music">
+    <view class="menu-icon">
+      <image src="../images/icon-music.png"></image>
+    </view>
+    <view>音乐</view>
+  </view>
+  <view hover-class="hover-menu-item" class="menu-item" catchtap="onTapEditMenu" data-type="filter">
+    <view class="menu-icon">
+      <image src="../images/icon-filter.png"></image>
+    </view>
+    <view>滤镜</view>
+  </view>
+  <view hover-class="hover-menu-item" class="menu-item" catchtap="onTapEditMenu" data-type="effect">
+    <view class="menu-icon">
+      <image src="../images/icon-effect.png"></image>
+    </view>
+    <view>特效</view>
+  </view>
+  <view hover-class="hover-menu-item" class="menu-item" catchtap="onTapEditMenu" data-type="text">
+    <view class="menu-icon">
+      <image src="../images/icon-text.png"></image>
+    </view>
+    <view>文字</view>
+  </view>
+  <view 
+    style="background-color:{{settings.editor.nextButton.state.default.backgroundColor}};color:{{settings.editor.nextButton.state.default.fontColor}}" 
+    class="my-btn next-btn" 
+    hover-class="hover-btn" 
+    catchtap="goExportPage">下一步</view>
+</view>

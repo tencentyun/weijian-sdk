@@ -1,0 +1,11 @@
+<wj-export
+    tracks="{{tracks}}"
+    bindprogress="handleProgress"
+    bindexportsuccess="handleExportSuccess"
+    bindexportfail="handleExportFail"
+    bindready="handleReady"
+    bindthumbready="handleThumbReady"
+    watermark="https://cdn.cdn-go.cn/mp-video-edit-static/latest/images/watermark.png"
+    >
+<button>点击开始导出</button>
+</wj-export>

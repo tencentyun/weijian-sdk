@@ -1,0 +1,39 @@
+
+<view  wx:if="{{show}}" class="operate-panel-bg {{ showOperatePanel==true ?  'show-panel-anim':'hide-panel-anim'}}" style="background-color:{{settings.editor.operatePanel.backgroundColor}}">
+    <view class="operate-list-main">
+        <scroll-view scroll-x style="box-sizing:border-box;white-space: nowrap;width:100%;height:180rpx;border-bottom: 1px solid rgba(255,255,255,0.1);display:{{musicTap==='music'?'':'none'}}">
+            <block wx:for="{{recommendMusicList}}">
+                <view class='item {{item.selected?"item-selected":""}}' bindtap="onTapRecommendMisic" data-key="{{item.key}}">
+                    <view style="height: 104rpx;width: 104rpx;margin-bottom: 4rpx;">
+                        <image style='{{item.selected ? "border-color:" + settings.editor.operatePanel.music.highlightColor + ";" : ""}}' class="icon icon-cover" src="{{item.AlbumImageUrl}}"></image>
+                    </view>
+                    <view class='desc' style='{{item.selected ? "color:" + settings.editor.operatePanel.music.highlightColor + ";" : "color: " + settings.editor.operatePanel.textColor + ";"}}'>
+                        <text class="marquee">{{item.Name}}</text>
+                    </view>
+                </view>
+            </block>
+        </scroll-view>
+        <view catchtouchmove="onVolumnTouchMove" class="slider-container" style="display:{{musicTap==='volume'?'':'none'}}">
+            <view class="slider-item">
+                <view class="slider-desc">原声</view>
+                <view class="slider-oper-area">
+                    <slider bindchanging="onVideoVolumeChange" catchtouchend="videoVolumeEnd"    activeColor="#ff584c" value="{{videoVolume}}" show-value />
+                </view>
+            </view>
+            <view class="slider-item">
+                <view class="slider-desc">配乐</view>
+                <view class="slider-oper-area">
+                    <slider bindchanging="onMusicVolumeChange" catchtouchend="musicVolumeEnd"  value="{{musicVolume}}" show-value />
+                </view>
+            </view>
+        </view>
+        <view class="music-oper-tab">
+            <view bindtap="onTapMusicOperTab" data-key="music" class="tab-item {{currMusicOperTab==='setMusic'?'item-selected':''}}" style='{{currMusicOperTab==="setMusic" ? "color: " + settings.editor.operatePanel.music.highlightColor+";" : "color: " + settings.editor.operatePanel.textColor + ";"}}'>
+                配乐
+            </view>
+            <view bindtap="onTapMusicOperTab" data-key="volume" class="tab-item {{currMusicOperTab==='setVolume'?'item-selected':''}}" style='{{currMusicOperTab==="setVolume" ? "color: " + settings.editor.operatePanel.music.highlightColor+";" : "color: " + settings.editor.operatePanel.textColor + ";"}}'>
+                音量
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+      "wj-camera": "plugin://myPlugin/wj-camera",
+      "wj-clipper": "plugin://myPlugin/wj-clipper",
+      "wj-player": "plugin://myPlugin/wj-player"
+    }
+  }

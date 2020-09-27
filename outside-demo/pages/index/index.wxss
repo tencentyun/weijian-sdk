@@ -1,0 +1,13 @@
+.title {
+  text-align: center;
+
+}
+.item {
+  display: block;
+  width: 750rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border: 1rpx solid #eee;
+  margin-top: 10rpx;
+}

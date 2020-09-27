@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "wj-export": "plugin://myPlugin/wj-export"
+  }
+}

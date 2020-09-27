@@ -1,0 +1,12 @@
+<view class="page">
+  <wj-camera bindmediachanged="onMediaChanged" clips="{{clips}}">
+    <view 
+    class="next-btn" 
+    hover-class="hover-btn" 
+    catchtap="onClickNext">
+    <navigator data-source="jump" url="../preview/index" hover-class="none">
+        <text>下一步</text>
+    </navigator>
+    </view>
+  </wj-camera>
+</view>

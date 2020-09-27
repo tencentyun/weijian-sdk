@@ -1,0 +1,19 @@
+{
+  "pages":[
+    "pages/demo/index/index"
+  ],
+  "plugins": {
+    "myPlugin": {
+      "version": "1.3.2",
+      "provider": "wx76f1d77827f78beb"
+    }
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

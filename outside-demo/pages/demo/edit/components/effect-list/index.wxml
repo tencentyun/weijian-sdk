@@ -1,0 +1,35 @@
+
+	<view 
+        class="ef-main" 
+		style="background-color:#000;color:{{settings.editor.operatePanel.textColor}};bottom:{{show?0:-9999}}px;">
+
+		<view class="operate-list-main ef-list-main">
+			<scroll-view scroll-x style="white-space: nowrap;width:100%" scroll-with-animation="{{true}}">
+				<block wx:for="{{curEffectList}}" wx:key="key">
+					<view id="{{item.key}}" class='item {{pressingEffectKey == item.key ? "pressing-effect" : ""}}' bindtap="effectTap" data-key="{{item.key}}">
+						<image class="icon" lazy-load="{{true}}" src="https://imgcache.qq.com/qcloud/vod/dist/mp-video-edit/effect/{{item.key}}.gif"></image>
+						<view class='desc' style="color:{{settings.editor.operatePanel.textColor}};">{{item.name}}</view>
+					</view>
+				</block>
+            </scroll-view>
+		</view>
+
+		<view class="ef-tabs">
+			<view class="ef-cancel-edit" bindtouchend="onTapEfClose">
+				<image src="https://cdn.cdn-go.cn/mp-video-edit-static/latest/images/close_icon.png"></image>
+			</view>
+			<view class="ef-tab-item {{curEffectTab === 'fantasy' ? 'active': ''}}" bindtouchend="onTapTab1">
+				梦幻
+			</view>
+			<view class="ef-tab-item {{curEffectTab === 'dynamic' ? 'active': ''}}" bindtouchend="onTapTab2">
+				动感
+			</view>
+			<view class="ef-tab-item {{curEffectTab === 'splitScreen' ? 'active': ''}}" bindtouchend="onTapTab3">
+				分屏
+			</view>
+			<view class="ef-save-edit" bindtouchend="onTapEfSave">
+				<image src="https://cdn.cdn-go.cn/mp-video-edit-static/latest/images/ok_icon.png"></image>
+			</view>
+		</view>
+
+	</view>

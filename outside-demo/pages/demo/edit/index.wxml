@@ -1,0 +1,18 @@
+<view class="edit_container">
+    <view bindtap="playerTap">
+        <!-- 播放器 -->
+        <wj-player
+            id="my-player2"
+            mode="default"
+            enablePauseIcon="{{showPauseIcon}}"
+            bindready="onEditReady"
+            allowSetVolumn="{{true}}"></wj-player>
+    </view>
+
+    <!-- 播放器控制面板，偏UI，不用太关注 -->
+    <track-list bottom="{{200}}" bindtrackTap="onTapSelectEffect" show="{{active === 'none'}}"></track-list>
+    <music-list  show="{{active === 'music'}}"></music-list>
+    <filter-list  show="{{active === 'filter'}}"></filter-list>
+    <wj-texteditor  wx:if="{{active==='text'}}" bindconfirm="onConfirmText" bindclose="onTextEditorClose"/>
+    <effect-list id="effect_cp" bindsetActive="setActive"  show="{{active === 'effect'}}"></effect-list>
+</view>
