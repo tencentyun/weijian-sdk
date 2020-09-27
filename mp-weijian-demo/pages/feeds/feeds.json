@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "my-player": "plugin://myVideo/player",
+    "mp-loading": "/miniprogram_npm/weui-miniprogram/loading/loading"
+  },
+  "disableScroll": true
+}

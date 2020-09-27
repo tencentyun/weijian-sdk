@@ -1,0 +1,24 @@
+<!--index.wxml-->
+
+<view class="container">
+	
+	<view class="music_btn" bindtap="tap_music_btn">
+    <image src="./img/music.png" mode="aspectFit"></image>
+	</view>
+
+	<view class='list-half'>
+		<view wx:for="{{videoList}}" wx:key="Id" wx:if="{{index%2 == 0}}" class='card'>
+			<image data-nav-data="{{item}}" bindtap="tap_select_video" mode="aspectFit" src="{{item.Cover}}" style="height:{{item.realHeight}}rpx">
+			</image>
+		</view>
+	</view>
+	<view class='list-half'>
+		<view wx:for="{{videoList}}" wx:key="Id" wx:if="{{index%2 != 0}}" class='card'>
+			<image data-nav-data="{{item}}" bindtap="tap_select_video" mode="aspectFit" src="{{item.Cover}}" style="height:{{item.realHeight}}rpx">
+			</image>
+		</view>
+	</view>
+
+</view>
+
+<mp-loading wx:if="{{loading}}" class="loading" type="dot-gray" ></mp-loading>

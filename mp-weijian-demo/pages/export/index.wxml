@@ -1,0 +1,43 @@
+<view class="container">
+	<view class="top_wrap">
+		<view class="item">
+			<text class="title">标题</text>
+			<textarea class="input" auto-height="{{true}}" placeholder="请输入视频标题" />
+			</view>
+  <view class="item">
+    <text class="title">描述</text>
+    <textarea class="input" auto-height="{{true}}" placeholder="请输入视频描述"/>
+  </view>
+      <image
+    
+   class="thumb " src="{{img_url}}" mode="aspectFit"></image>
+
+  </view>
+
+  <view class="progress_box">
+    <!-- <progress percent="{{progress}}" color="rgb(67, 120, 246)"    stroke-width="6" /> -->
+    <view class="select_wrap" bindtap="tap_select">
+      <image src="./img/right_blue.png" wx:if="{{isSaveLocal}}"></image>
+      <image src="./img/right_white.png" wx:if="{{!isSaveLocal}}"></image>
+      <text>导出视频到本地</text>
+    </view>
+
+  </view>
+  <export
+    bindthumbready="handleThumbReady"
+    showloading="{{false}}" 
+    bindexportsuccess="handleExportSuccess"
+    bindprogress="export_progress"
+    watermark="https://cdn.cdn-go.cn/mp-video-edit-static/latest/images/watermark.png"
+  >
+    
+    <button  disabled="{{isUploading}}" bindtap="start_export" class="sub_btn">发布视频</button>
+  </export>
+
+    <!-- <mp-loading wx:if="{{isUploading}}" ext-class="loading_item" tips="发布中... {{progress}}%" type="circle"></mp-loading> -->
+    <!-- <view  wx:if="{{isUploading}}" class="load_wrap">
+      发布中...  {{progress}}%
+    </view> -->
+    <!-- <div class="loading"></div> -->
+    <loading wx:if="{{isUploading}}">发布中...  {{progress}}%</loading>
+</view>

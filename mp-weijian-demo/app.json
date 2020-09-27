@@ -1,0 +1,34 @@
+{
+  "pages":[
+
+    "pages/index/index",
+    "pages/feeds/feeds",
+    "pages/weijian/index",
+    "pages/export/index"
+
+  ],
+  "window":{
+    "backgroundTextStyle":"#333",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "微剪接入示例",
+    "navigationBarTextStyle":"black",
+    "backgroundColor": "#999"
+  },
+
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  },
+  "navigationStyle": "custom",
+  "plugins": {
+    "myVideo": {
+      "version": "0.0.3",
+      "provider": "wx116d0dd5e6a39ac7"
+    },
+    "myPlugin": {
+      "provider": "wx76f1d77827f78beb",
+      "version": "1.2.2"
+    }
+  }
+}

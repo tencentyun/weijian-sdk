@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "my-clip": "plugin://myPlugin/clip"
+  },
+  "navigationStyle": "custom"
+}

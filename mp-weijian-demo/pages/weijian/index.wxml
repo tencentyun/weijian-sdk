@@ -1,0 +1,9 @@
+    
+    
+    
+    <my-clip
+      settings="{{settings}}"
+      showClose="{{true}}"
+      bindclose="handleClose"
+    >
+    </my-clip>

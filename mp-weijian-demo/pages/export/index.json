@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "export": "plugin://myPlugin/export",
+    "mp-loading": "/miniprogram_npm/weui-miniprogram/loading/loading"
+  },
+  "disableScroll": true
+}

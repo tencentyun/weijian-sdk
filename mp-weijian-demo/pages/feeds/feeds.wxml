@@ -1,0 +1,153 @@
+<!--logs.wxml-->
+<view class="container">
+	<scroll-view class="scroll_wrap" scroll-y="true" bindscroll="scroll_handle">
+
+		<view class="video_wrap">
+				<my-player
+					height="{{realHeight}}rpx"
+					width="750rpx"
+					appid="1256244234"
+					fileid="{{fileid}}"
+					loop
+					autoplay
+					show-fullscreen-btn="{{false}}"
+					controls="{{isControls}}"
+					bindplay="play_handle"
+					bindpause="pause_handle"
+					bindtap="tap_video"
+					playerid="video_player"
+					show-play-btn="{{false}}"
+				>
+				</my-player>
+	
+		
+
+			<mp-loading wx:if="{{loading}}" class="loading" type="dot-white"></mp-loading>
+			<image bindtap="tap_play_icon" wx:if="{{!isPlaying}}" src="./img/player.png" class="play_icon"></image>
+
+			<image bindtap="tap_play_icon" wx:if="{{isPlaying && isControls}}" src="./img/pause.png" class="play_icon"></image>
+		</view>
+
+
+
+		<view class="play_nums">15.3w播放</view>
+		<view class="text_wrap">
+			<view class="link text">
+				Justin Woods: #打卡每天进步一点点# #支持传播正能量#
+			</view>
+
+			<view class="content text">
+				加油！
+			</view>
+		</view>
+
+		<view class="dot_zan">
+			<view class="zan_wrap">
+				<image src="./img/love_white.png"></image>
+				<view class="text">20019赞</view>
+			</view>
+			<view class="zan_wrap wrap2">
+				<image src="./img/comment.png"></image>
+				<view class="text">2009评论</view>
+			</view>
+		</view>
+
+		<view class="comment_wrap">
+			<view class="comment_item">
+				<image class="avatar" src="./img/avatar1.png"></image>
+				<view class="name">Jimy Woods</view>
+				<view class="content">给你点赞!!!!</view>
+				<view class="time">1小时前</view>
+				<view class="zan">
+					<image class="star" src="./img/love_white.png"></image>
+					<view>199.3w</view>
+				</view>
+			</view>
+
+			<view class="comment_item">
+				<image class="avatar" src="./img/avatar2.png"></image>
+				<view class="name">James Kobe</view>
+				<view class="content">今天去哪里玩呀？</view>
+				<view class="time">1天前</view>
+				<view class="zan">
+					<image class="star" src="./img/love_white.png"></image>
+					<view>10.2w</view>
+				</view>
+			</view>
+
+			<view class="comment_item">
+				<image class="avatar" src="./img/avatar3.png"></image>
+				<view class="name">刘易斯</view>
+				<view class="content">说出来你可能不信，我。。。</view>
+				<view class="time">50分钟前</view>
+				<view class="zan">
+					<image class="star" src="./img/love_white.png"></image>
+					<view>1w</view>
+				</view>
+			</view>
+
+			<view class="comment_item">
+				<image class="avatar" src="./img/avatar4.png"></image>
+				<view class="name">芦苇</view>
+				<view class="content">好烦啊，今天吃鸡腿被禁赛了！</view>
+				<view class="time">30分钟前</view>
+				<view class="zan">
+					<image class="star" src="./img/love_white.png"></image>
+					<view>9898</view>
+				</view>
+			</view>
+
+
+				<view class="comment_item">
+					<image class="avatar" src="./img/avatar1.png"></image>
+					<view class="name">Jimy Woods</view>
+					<view class="content">给你点赞!!!!</view>
+					<view class="time">1小时前</view>
+					<view class="zan">
+						<image class="star" src="./img/love_white.png"></image>
+						<view>2122</view>
+					</view>
+				</view>
+
+				<view class="comment_item">
+					<image class="avatar" src="./img/avatar2.png"></image>
+					<view class="name">James Kobe</view>
+					<view class="content">今天去哪里玩呀？</view>
+					<view class="time">1天前</view>
+					<view class="zan">
+						<image class="star" src="./img/love_white.png"></image>
+						<view>889</view>
+					</view>
+				</view>
+
+				<view class="comment_item">
+					<image class="avatar" src="./img/avatar3.png"></image>
+					<view class="name">刘易斯</view>
+					<view class="content">说出来你可能不信，我。。。</view>
+					<view class="time">50分钟前</view>
+					<view class="zan">
+						<image class="star" src="./img/love_white.png"></image>
+						<view>88</view>
+					</view>
+				</view>
+
+				<view class="comment_item">
+					<image class="avatar" src="./img/avatar4.png"></image>
+					<view class="name">芦苇</view>
+					<view class="content">好烦啊，今天吃鸡腿被禁赛了！</view>
+					<view class="time">30分钟前</view>
+					<view class="zan">
+						<image class="star" src="./img/love_white.png"></image>
+						<view>1</view>
+					</view>
+				</view>
+
+
+			</view>
+			<view class="input_wrap">
+				<input placeholder="@ 请输入内容" confirm-type="send">
+				</input>
+			</view>
+
+	</scroll-view>
+</view>

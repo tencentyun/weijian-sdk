@@ -1,0 +1,189 @@
+page {
+  height: 100%;
+  color: rgb(58, 58, 58);
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  /* padding-left: 10px;
+  padding-right: 10px; */
+  /* overflow-y: scroll; */
+}
+
+.scroll_wrap{
+  height: 100%;
+}
+
+/* .content_wrap {
+  padding-left: 10px;
+  padding-right: 10px;
+} */
+
+.video_origin {
+
+  width: 100%;
+}
+
+.play_nums {
+  color: rgb(150, 150, 150);
+  padding-left: 10px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.text_wrap {
+  display: block;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.text_wrap .text {
+  display: inline;
+}
+.text_wrap .link {
+  color: rgb(67, 120, 246);
+}
+
+.dot_zan {
+  display: flex;
+  flex-direction: row;
+  padding-left: 10px;
+  border-bottom: 1px solid rgb(246, 246, 246);
+  padding-top: 14px;
+  padding-bottom: 18px;
+}
+
+.dot_zan .zan_wrap {
+  display: flex;
+  flex-direction: row;
+}
+
+.dot_zan image{
+  height: 16px;
+  width: 16px;
+  /* margin-right: 14px; */
+}
+
+
+.dot_zan .wrap2 {
+  margin-left: 14px;
+}
+
+.dot_zan .text {
+  margin-left: 10px;
+  text-align: center;
+  line-height: 14px;
+  font-size: 14px;
+  /* margin-right: 14px; */
+}
+
+.comment_wrap {
+  /* padding-left: 10px;
+  padding-right: 10px; */
+  padding-top: 20px;
+  /* padding-bottom: 10px; */
+  padding-bottom: calc(80px + env(safe-area-inset-bottom));
+}
+
+.comment_wrap .comment_item {
+  padding-left: 50px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.comment_wrap .comment_item .avatar {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  height: 34px;
+  width: 34px;
+  display: block;
+  border-radius: 50%;
+}
+
+.comment_wrap .comment_item .name {
+  color: rgb(67, 120, 246);
+}
+
+.comment_wrap .comment_item .time {
+  color: rgb(150, 150, 150);
+  font-size: 12px;
+}
+
+
+.comment_wrap .comment_item .zan {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 50px;
+} 
+
+.comment_wrap .comment_item .zan .star {
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
+  display: block;
+}
+
+.comment_wrap .comment_item .zan view {
+  text-align: center;
+  color: #999;
+}
+
+.input_wrap {
+  height: calc(60px + env(safe-area-inset-bottom));
+  border-top: 1px solid rgb(246, 246, 246);
+  width: 100%;
+  position: fixed;
+  /* bottom: 0; */
+  /* background: pink; */
+  background: #fff;
+}
+
+.input_wrap input {
+  height: 60px;
+  /* background: yellow; */
+  /* text-indent: 10px; */
+  padding-left: 10px;
+
+}
+
+.video_wrap {
+  position: relative;
+}
+
+.play_icon {
+  height: 100rpx;
+  width: 100rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom:0;
+  right: 0;
+  margin: auto;
+
+  /* transform: (-40rpx, -40rpx); */
+
+}
+
+/* .loading {
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom:0;
+  right: 0;
+  margin: auto;
+} */
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.progress_box {
+  width: 200px;
+
+}
+

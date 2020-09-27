@@ -1,0 +1,10 @@
+
+
+<template name="nav">
+      <view class="nav_wrap_big">
+        <view class="nav_wrap">
+          <view class="nav_item">视频</view>
+          <view class="nav_item">我的</view>
+        </view>
+      </view>
+</template>

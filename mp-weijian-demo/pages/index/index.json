@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "mp-loading": "/miniprogram_npm/weui-miniprogram/loading/loading"
+  },
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true
+
+  
+}
