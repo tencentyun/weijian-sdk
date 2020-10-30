@@ -28,7 +28,8 @@
     },
     "myPlugin": {
       "provider": "wx76f1d77827f78beb",
-      "version": "1.2.2"
+      "version": "1.4.3",
+      "export": "index.js"
     }
   }
 }
