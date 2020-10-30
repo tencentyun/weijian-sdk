@@ -62,7 +62,10 @@ Page({
                 style: {
                     type: text.bgColor === 'transparent' ? 'normal' : 'background', // 文字样式
                     color: text.color, // 文字颜色
-                    backgroundColor: text.bgColor
+                    backgroundColor: text.bgColor,
+                    fontfamily: text.family,
+                    fonturl: text.fontUrl,
+                    fontloaded: text.fontloaded
                 }
             },
         })
