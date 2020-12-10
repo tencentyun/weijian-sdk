@@ -6,7 +6,7 @@
             mode="default"
             enablePauseIcon="{{showPauseIcon}}"
             bindready="onEditReady"
-            allowSetVolumn="{{true}}"></wj-player>
+            allowSetVolume="{{true}}"></wj-player>
     </view>
 
     <!-- 播放器控制面板，偏UI，不用太关注 -->
