@@ -6,8 +6,9 @@
 		<view class="operate-list-main ef-list-main">
 			<scroll-view scroll-x style="white-space: nowrap;width:100%" scroll-with-animation="{{true}}">
 				<block wx:for="{{curEffectList}}" wx:key="key">
-					<view id="{{item.key}}" class='item {{pressingEffectKey == item.key ? "pressing-effect" : ""}}' bindtap="effectTap" data-key="{{item.key}}">
-						<image class="icon" lazy-load="{{true}}" src="https://imgcache.qq.com/qcloud/vod/dist/mp-video-edit/effect/{{item.key}}.gif"></image>
+					<view id="{{item.key}}" class='item {{pressingEffectKey == item.key ? "pressing-effect" : ""}}' bindtap="effectTap" data-key="{{item.key}}" data-isalpha="{{item.is_alpha}}">
+						<image wx:if="{{!item.is_alpha}}" class="icon" lazy-load="{{true}}" src="https://imgcache.qq.com/qcloud/vod/dist/mp-video-edit/effect/{{item.key}}.gif"></image>
+						<image wx:if="{{item.is_alpha}}" class="icon" lazy-load="{{true}}" src="https://video_fe.cdn-go.cn/mp-video-edit-static/latest/stickerGif/{{item.key}}___.gif?max_age=0"></image>
 						<view class='desc' style="color:{{settings.editor.operatePanel.textColor}};">{{item.name}}</view>
 					</view>
 				</block>

@@ -4,9 +4,9 @@
     class="next-btn" 
     hover-class="hover-btn" 
     catchtap="onClickNext">
-    <navigator data-source="jump" url="../preview/index" hover-class="none">
-        <text>下一步</text>
-    </navigator>
+      <navigator class="next_btn" data-source="jump" url="../preview/index" hover-class="none">
+          <text>下一步</text>
+      </navigator>
     </view>
   </wj-camera>
 </view>

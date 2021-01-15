@@ -12,6 +12,10 @@ Page({
         const eventChannel = this.getOpenerEventChannel();
         global.edit.player = this._player;
 
+        global.edit.player.downLoadEffect('jinfen3');
+
+        console.error(this._player)
+
         // 接收裁切页传递过来的轨道信息
         eventChannel.on("acceptDataFromOpenerPage", data => {
             this._tracks = data.tracks;

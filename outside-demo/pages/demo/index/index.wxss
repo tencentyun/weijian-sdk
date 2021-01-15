@@ -21,3 +21,13 @@
 #add {
   margin: 1em;
 }
+
+.next_btn {
+  position: fixed;
+  bottom: 100rpx;
+}
+
+.next-btn {
+  position: fixed;
+  bottom: 100rpx;
+}
