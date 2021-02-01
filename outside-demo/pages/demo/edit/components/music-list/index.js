@@ -148,35 +148,82 @@ Component({
         onVideoVolumeChange(e) {
             const value = e.detail.value;
 
-            this._tracks.forEach((item, index) => {
-                if(item.type === 'audio') {
-                    
+            this._originV = value / 100;
+
+            // this._tracks.forEach((item, index) => {
+            //     if(item.type === 'audio') {
+
+            //         item.clips.forEach((item) => {
+            //             item.volume = value / 100;
+            //         })
+            //     }
+            // });
+
+            // global.edit.player.updateData(this._tracks);
+        },
+
+        onMusicVolumeChange(e) {
+            const value = e.detail.value;
+            // this._music_volume = value;
+
+            // this._setMusicVolume(value/100);
+
+            this._musicV = value / 100;
+
+        },
+
+        videoVolumeEnd() {
+
+
+            const tracks = global.edit.player.getTracks();
+            tracks.forEach((item, index) => {
+
+                
+                if (item.type === 'audio') {
+
                     item.clips.forEach((item) => {
-                        item.volume = value / 100;
+                        console.error('item', item)
+
+                        item.audio = {
+                            volume: this._originV || 0
+                        }
                     })
                 }
             });
 
-            global.edit.player.updateData(this._tracks);
-        },
-        onMusicVolumeChange(e) {
-            const value = e.detail.value;
-            this._music_volume = value;
+            global.edit.player.updateData(tracks);
 
-            this._setMusicVolume(value/100);
         },
-        _setMusicVolume(value) {
-            // 调整音乐的音量
-            this._tracks.forEach((item, index) => {
-                if(item.type === 'music') {
 
-                    // this._tracks指播放器轨道，index定位到music track， clips中第一个为当前正在播放的音乐，修改它的volume属性即可
-                    this._tracks[index].clips[0].volume = value;
+        musicVolumeEnd() {
+            console.error('mmmmm', this._musicV)
+
+            const tracks = global.edit.player.getTracks();
+
+            tracks.forEach((item, index) => {
+                if (item.type === 'music') {
+                    tracks[index].clips[0].audio = {
+                        volume: this._musicV 
+                    }
                 }
             });
 
-            
-            global.edit.player.updateData(this._tracks);
+            global.edit.player.updateData(tracks);
+        },
+
+        _setMusicVolume(value) {
+            // 调整音乐的音量
+            const tracks = global.edit.player.getTracks();
+            tracks.forEach((item, index) => {
+                if (item.type === 'music') {
+
+                    // this._tracks指播放器轨道，index定位到music track， clips中第一个为当前正在播放的音乐，修改它的volume属性即可
+                    tracks[index].clips[0].volume = value;
+                }
+            });
+
+
+            global.edit.player.updateData(tracks);
         }
     }
 })
