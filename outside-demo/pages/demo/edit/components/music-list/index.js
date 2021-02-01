@@ -150,26 +150,12 @@ Component({
 
             this._originV = value / 100;
 
-            // this._tracks.forEach((item, index) => {
-            //     if(item.type === 'audio') {
-
-            //         item.clips.forEach((item) => {
-            //             item.volume = value / 100;
-            //         })
-            //     }
-            // });
-
-            // global.edit.player.updateData(this._tracks);
         },
 
         onMusicVolumeChange(e) {
             const value = e.detail.value;
-            // this._music_volume = value;
-
-            // this._setMusicVolume(value/100);
 
             this._musicV = value / 100;
-
         },
 
         videoVolumeEnd() {
@@ -196,8 +182,7 @@ Component({
         },
 
         musicVolumeEnd() {
-            console.error('mmmmm', this._musicV)
-
+            // 在修改播放器状态时，建议都使用Player的 getTracks方法，自己维护的状态可能会有问题
             const tracks = global.edit.player.getTracks();
 
             tracks.forEach((item, index) => {
