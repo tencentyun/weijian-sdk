@@ -168,7 +168,7 @@ Component({
                 if (item.type === 'audio') {
 
                     item.clips.forEach((item) => {
-                        console.error('item', item)
+                        // console.error('item', item)
 
                         item.audio = {
                             volume: this._originV || 0
