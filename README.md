@@ -1,3 +1,3 @@
 # weijian-sdk
-微剪相关代码库
+微剪插件使用Demo
 
