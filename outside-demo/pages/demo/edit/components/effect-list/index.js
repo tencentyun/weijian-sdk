@@ -19,8 +19,17 @@ Component({
         },
         ready() {
 
+            const effectArr = global.edit.player.getEffects();
+
+            const len = effectArr.length;
+
+            const alphaEffectData = effectArr[len - 1];
+
+
             // 从播放器中获取特效支持的key
             this._effectList = global.edit.player.getEffects().splice(0, 12);
+
+            this._effectList.unshift(alphaEffectData);
 
             this._effectList2 = global.edit.player.getEffects().splice(12, 20);
 
@@ -80,16 +89,36 @@ Component({
 
             let key = e.currentTarget.dataset.key;
 
-            const initData = {
-                type: 'effect',
-                section: {
-                    start: 0,
-                    end: 100,     // 如果你需要给整个视频添加这种特效，时间填入100即可，播放器内部会自动处理
-                    duration: 100
-                },
-                startAt: 0,
-                key: key,   // 特效的key
-            };
+            let isalpha = e.currentTarget.dataset.isalpha;
+
+            let initData;
+
+            if(isalpha) {
+                initData = {
+                    type: 'effect',
+                    section: {
+                        start: 0,
+                        end: 100,     // 如果你需要给整个视频添加这种特效，时间填入100即可，播放器内部会自动处理
+                        duration: 100
+                    },
+                    isAlpha: true,
+                    startAt: 0,
+                    key: key,   // 特效的key
+                };
+            } else {
+                initData = {
+                    type: 'effect',
+                    section: {
+                        start: 0,
+                        end: 100,     // 如果你需要给整个视频添加这种特效，时间填入100即可，播放器内部会自动处理
+                        duration: 100
+                    },
+                    startAt: 0,
+                    key: key,   // 特效的key
+                };
+            }
+
+
 
             // 创建effect clip
             const clipData = new global['wj-types'].Clip(initData);

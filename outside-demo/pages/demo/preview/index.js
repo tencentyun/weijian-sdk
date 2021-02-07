@@ -31,6 +31,11 @@ Page({
     // 调整播放器样式
     this.setPlayerStyle()
   },
+  onHide() {
+    // console.error('hhhhhhh')
+    this.player.pause();
+    
+  },
   onPlayerReady() {
 
     const videoTrack = global.index.videoTrack;
@@ -41,6 +46,9 @@ Page({
     this.player.updateData([videoTrack], () => {
       // 任何时候都建议在updateData的回调里进行play 或者 pause操作
       this.player.play();
+
+      this._nextTracks = this.player.getTracks();
+      // console.error('预览页播放数据, ', this.player.getTracks())
     });
   },
 
@@ -147,7 +155,7 @@ Page({
         res.eventChannel.emit('acceptDataFromOpenerPage', {
 
           // clipper实例提供的方法可以获取tracks信息
-          tracks: this.clipper.getValidTrack([this._innerTrackInfo])
+          tracks: this._nextTracks
         })
       }
     })

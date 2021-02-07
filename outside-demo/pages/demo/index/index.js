@@ -14,5 +14,13 @@ Page({
 
     // 用于数据传递
     global.index.videoTrack = videoTrack;
+
+
+    setTimeout(() => {
+      wx.navigateTo({
+        url: '../preview/index',
+      })
+    }, 1000);
+    
   },
 });
