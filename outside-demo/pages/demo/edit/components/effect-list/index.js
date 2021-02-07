@@ -6,39 +6,49 @@ Component({
         show: {
             type: Boolean,
             value: false
+        },
+        effectList: {
+            type: Array,
+            value: []
         }
     },
+
     data: {
         curEffectList: [],
         curEffectTab: 'fantasy',
         pressingEffectKey: '',
     },
-
+    observers: {
+        effectList(data) {
+            if (!data || !data.length) return
+            // console.log('%c effectList', 'font-size:50px', data)
+            // 可自行根据喜好分类
+            this._effectList.fantasy = data.slice(0, 12)
+            // this._effectList.fantasy.unshift(...data.slice(-3))
+            this._effectList.dynamic = data.slice(12,20)
+            this._effectList.splitScreen = data.slice(20,27)
+            this.setData({
+                curEffectTab: "fantasy",
+                curEffectList: this._effectList.fantasy
+            })
+        }
+    },
     lifetimes: {
         attached() {
         },
         ready() {
+            this.init()
+        }
+    },
 
-            const effectArr = global.edit.player.getEffects();
-
-            const len = effectArr.length;
-
-            const alphaEffectData = effectArr[len - 1];
-
-
-            // 从播放器中获取特效支持的key
-            this._effectList = global.edit.player.getEffects().splice(0, 12);
-
-            this._effectList.unshift(alphaEffectData);
-
-            this._effectList2 = global.edit.player.getEffects().splice(12, 20);
-
-            this._effectList3 = global.edit.player.getEffects().splice(20, 27);
-
-            this.setData({
-                curEffectList: JSON.parse(JSON.stringify(this._effectList))
-            });
-
+    methods: {
+        init(){
+            // 特效分类
+            this._effectList = {
+                fantasy: [],
+                dynamic: [],
+                splitScreen: []
+            }
 
             // 获取当前的播放器轨道
             this._tracks = global.edit.tracks;
@@ -51,31 +61,28 @@ Component({
 
             // 将特效轨道加入tracks中
             this._tracks.push(this._track_effect)
-        }
-    },
-
-    methods: {
+        },
         onTapEfClose() {
             this.triggerEvent('setActive', 'none')
         },
         onTapTab1() {
             this.setData({
                 curEffectTab: 'fantasy',
-                curEffectList: JSON.parse(JSON.stringify(this._effectList))
+                curEffectList: JSON.parse(JSON.stringify(this._effectList.fantasy))
             })
         },
 
         onTapTab2() {
             this.setData({
                 curEffectTab: 'dynamic',
-                curEffectList: JSON.parse(JSON.stringify(this._effectList2))
+                curEffectList: JSON.parse(JSON.stringify(this._effectList.dynamic))
             })
         },
 
         onTapTab3() {
             this.setData({
                 curEffectTab: 'splitScreen',
-                curEffectList: JSON.parse(JSON.stringify(this._effectList3))
+                curEffectList: JSON.parse(JSON.stringify(this._effectList.splitScreen))
             })
         },
 
@@ -93,7 +100,7 @@ Component({
 
             let initData;
 
-            if(isalpha) {
+            if (isalpha) {
                 initData = {
                     type: 'effect',
                     section: {

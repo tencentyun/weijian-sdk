@@ -14,5 +14,5 @@
     <music-list  show="{{active === 'music'}}"></music-list>
     <filter-list  show="{{active === 'filter'}}"></filter-list>
     <wj-texteditor  show="{{active==='text'}}" bindconfirm="onConfirmText" bindclose="onTextEditorClose"/>
-    <effect-list id="effect_cp" bindsetActive="setActive"  show="{{active === 'effect'}}"></effect-list>
+    <effect-list id="effect_cp" bindsetActive="setActive" show="{{active === 'effect'}}" effectList="{{effectList}}"></effect-list>
 </view>

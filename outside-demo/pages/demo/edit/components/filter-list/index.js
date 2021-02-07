@@ -26,27 +26,35 @@ Component({
             this._setFilter(key);
         },
         _setFilter(key) {
-
             // 获取播放器轨道
             const tracks = global.edit.player.getTracks();
             global.edit.filter = key;
 
-
-            const operations = new global.edit.player.types.ClipOperation({
-                key,
-                type: 'filter'
-            });
-            
-            tracks.forEach((item, index) => {
-                if(item.type === 'media') {
-                    item.clips.forEach((item) => {
-                        item.operations = [operations];
-                    })
-                }
+            // 删除掉旧的滤镜
+            let oldFilterTrackIndex = tracks.findIndex(t => t.type === 'filter')
+            if (oldFilterTrackIndex > -1) {
+                tracks.splice(oldFilterTrackIndex, 1)
+            }
+            const filterTrack = new global.edit.player.types.TrackData({
+                id: "main-filter",
+                type: 'filter',
+                clips: []
             })
+            const filterClip = new global.edit.player.types.ClipData({
+                id: 'main-filter',
+                type: 'filter',
+                key,
+                section: {
+                    start: 0,
+                    end: 1000,
+                    duration: 1000
+                },
+                startAt: 0
+            })
+            filterTrack.clips = [filterClip]
+            tracks.push(filterTrack)
             // 播放器更新
             global.edit.player.updateData(tracks);
-
 
             // 修改ui的active状态
             const list = this.data.filterList;

@@ -5,7 +5,7 @@
                 <view class="filter-main">
                     <block wx:for="{{filterList}}" wx:key="key">
                         <view id="{{item.key}}" class='item {{item.selected?"item-selected":""}}' bindtap="onTapFilterBtn" data-key="{{item.key}}">
-                            <image style='{{item.selected ? "border: 2rpx solid " + settings.editor.operatePanel.filter.highlightColor+";" : ""}}' class="icon" lazy-load="{{true}}" src="https://imgcache.qq.com/qcloud/vod/dist/mp-video-edit/filter/{{item.key}}.png"></image>
+                            <image style='{{item.selected ? "border: 2rpx solid " + settings.editor.operatePanel.filter.highlightColor+";" : ""}}' class="icon" lazy-load="{{true}}" src="{{item.previewImage || 'https://imgcache.qq.com/qcloud/vod/dist/mp-video-edit/filter/{{item.key}}.png'}}"></image>
                             <view class='desc' style='{{item.selected ? "color: " + settings.editor.operatePanel.filter.highlightColor + ";" : "color: " + settings.editor.operatePanel.textColor + ";"}}'>
                                 {{item.name}}
                             </view>

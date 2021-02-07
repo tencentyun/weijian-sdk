@@ -12,8 +12,6 @@ Page({
         const eventChannel = this.getOpenerEventChannel();
         global.edit.player = this._player;
 
-        global.edit.player.downLoadEffect('jinfen3');
-
         // console.error(this._player)
 
         // 接收裁切页传递过来的轨道信息
@@ -24,12 +22,15 @@ Page({
             // console.error('预览页传递过来的数据', this._tracks)
         });
     },
+    onReady: function () {
+        global.edit.player.downLoadEffect('jinfen3');
+    },
     onHide() {
         global.edit.player.pause()
-      },
-      onShow() {
+    },
+    onShow() {
         global.edit.player.play()
-      },
+    },
     onEditReady() {
 
         // console.error('传进播放器的数据', this._tracks)
@@ -40,6 +41,11 @@ Page({
 
             // console.error('编辑页数据更新', this._tracks)
         });
+        // 获取特效列表
+        const effectList = this._player.getEffects()
+        this.setData({
+            effectList
+        })
     },
     onTapSelectEffect(e) {
         const type = e.detail.type;  // 点击类型
