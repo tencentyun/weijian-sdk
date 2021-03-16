@@ -11,7 +11,7 @@ https://www.jianshu.com/p/81317ff3dba0
 python最好使用3.0以上版本
 
 运行：
-`python3.9 convertAlphaVideo.py  --dir ./caisehudie`
+`python3.9 alphaVideo.py  --dir ./caisehudie`
 
 ## 文件命名规则
 三位数字递增，例如：
